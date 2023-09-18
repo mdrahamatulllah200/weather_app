@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app_latest/controller/home_controller.dart';
-import 'package:weather_app_latest/views/test.dart';
 import 'package:weather_app_latest/views/home_screen.dart';
 
 Future<void> main() async {
