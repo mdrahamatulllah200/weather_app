@@ -16,6 +16,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   HomeController homeCC = Get.find();
 
+  String citynameValue = '';
+
   @override
   void initState() {
     // TODO: implement initState
@@ -85,6 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Center(
                           child: TextFormField(
+                            keyboardType: TextInputType.none,
                             onFieldSubmitted: (String s) async {
                               final connectivityResult =
                                   await InternetConnection
@@ -94,6 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 // setState(() {
                                 homeC.cityname.value = s;
                                 homeC.getCityWeather(s);
+                                citynameValue = s;
                                 homeC.isLoaded.value = false;
                                 homeC.controller.clear();
                                 // });
@@ -109,7 +113,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             },
                             controller: homeC.controller,
                             cursorColor: Colors.white,
-                            style: const TextStyle(
+                            style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white),
@@ -122,30 +126,27 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               prefixIcon: InkWell(
                                 onTap: () async {
-                                  final connectivityResult =
-                                      await InternetConnection
-                                          .isConnectedToInternet();
-
-                                  if (connectivityResult) {
-                                    try {
-                                      if (homeC.cityname.value.isNotEmpty) {
-                                        homeC.getCityWeather(
-                                            homeC.cityname.value);
-                                        homeC.isLoaded.value = false;
-                                        homeC.controller.clear();
-                                      }
-                                    } catch (e) {
-                                      log('$e');
-                                    }
-                                  } else {
-                                    Get.snackbar(
-                                      'Attention!!',
-                                      'Please check your internet connection.',
-                                      colorText: Colors.red,
-                                      snackPosition: SnackPosition.BOTTOM,
-                                      backgroundColor: Colors.white,
-                                    );
+                                  // final connectivityResult =
+                                  //     await InternetConnection
+                                  //         .isConnectedToInternet();
+                                  //
+                                  // if (connectivityResult) {
+                                  try {
+                                    homeC.getCityWeather(homeC.cityname.value);
+                                    homeC.isLoaded.value = false;
+                                    homeC.controller.clear();
+                                  } catch (e) {
+                                    log('$e');
                                   }
+                                  // } else {
+                                  //   Get.snackbar(
+                                  //     'Attention!!',
+                                  //     'Please check your internet connection.',
+                                  //     colorText: Colors.red,
+                                  //     snackPosition: SnackPosition.BOTTOM,
+                                  //     backgroundColor: Colors.white,
+                                  //   );
+                                  // }
                                 },
                                 child: Icon(
                                   Icons.search_rounded,
