@@ -63,7 +63,7 @@ jobs:
         run: dart format . --set-exit-if-changed
 
       - name: Run tests
-        if: steps.check_files.outputs.files_exists == 'true'
+        if: steps.check_files.outputs.files_exists == 'false'
         run: |
           # run tests if `test` folder exists
           if [ -d test ]
