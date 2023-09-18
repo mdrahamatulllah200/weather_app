@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:weather_app_latest/controller/home_controller.dart';
+import 'package:weather_app_latest/controllers/home_controller.dart';
 import 'package:weather_app_latest/components/loading_list_page.dart';
 import 'package:weather_app_latest/services/internet_connection.dart';
 
