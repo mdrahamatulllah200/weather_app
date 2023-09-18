@@ -3,7 +3,6 @@ import 'package:shimmer/shimmer.dart';
 
 import 'placeholders.dart';
 
-
 class LoadingListPage extends StatefulWidget {
   const LoadingListPage({super.key});
 
@@ -23,7 +22,7 @@ class _LoadingListPageState extends State<LoadingListPage> {
             baseColor: Colors.grey.shade300,
             highlightColor: Colors.grey.shade100,
             // enabled: true,
-            child:  const SingleChildScrollView(
+            child: const SingleChildScrollView(
               physics: NeverScrollableScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

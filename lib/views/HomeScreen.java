@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   homeC.getCurrentLocation();
                 },
                 child: SingleChildScrollView(
-                 // physics: const BouncingScrollPhysics(),
+                  // physics: const BouncingScrollPhysics(),
                   //physics: const NeverScrollableScrollPhysics(),
                   physics: const AlwaysScrollableScrollPhysics(),
                   child: Column(
@@ -86,8 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Center(
                           child: TextFormField(
                             onFieldSubmitted: (String s) async {
-                              final connectivityResult = await InternetConnection
-                                  .isConnectedToInternet();
+                              final connectivityResult =
+                                  await InternetConnection
+                                      .isConnectedToInternet();
 
                               if (connectivityResult) {
                                 // setState(() {
@@ -128,8 +129,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                   if (connectivityResult) {
                                     try {
                                       if (homeC.cityname.value.isNotEmpty) {
-                                        homeC
-                                            .getCityWeather(homeC.cityname.value);
+                                        homeC.getCityWeather(
+                                            homeC.cityname.value);
                                         homeC.isLoaded.value = false;
                                         homeC.controller.clear();
                                       }
@@ -255,9 +256,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image(
-                                  image:
-                                      const AssetImage('images/thermometer.png'),
-                                  width: MediaQuery.of(context).size.width * 0.09,
+                                  image: const AssetImage(
+                                      'images/thermometer.png'),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.09,
                                 ),
                               ),
                             ),
@@ -299,8 +301,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image(
-                                  image: const AssetImage('images/barometer.png'),
-                                  width: MediaQuery.of(context).size.width * 0.09,
+                                  image:
+                                      const AssetImage('images/barometer.png'),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.09,
                                 ),
                               ),
                             ),
@@ -344,8 +348,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image(
-                                  image: const AssetImage('images/humidity.png'),
-                                  width: MediaQuery.of(context).size.width * 0.09,
+                                  image:
+                                      const AssetImage('images/humidity.png'),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.09,
                                 ),
                               ),
                             ),
@@ -389,9 +395,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image(
-                                  image:
-                                      const AssetImage('images/cloud cover.png'),
-                                  width: MediaQuery.of(context).size.width * 0.09,
+                                  image: const AssetImage(
+                                      'images/cloud cover.png'),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.09,
                                 ),
                               ),
                             ),

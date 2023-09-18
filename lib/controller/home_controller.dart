@@ -143,11 +143,11 @@ class HomeController extends GetxController {
       cover.value = 0;
       cityname.value = 'Not available';
 
-       country.value = '';
-       lon.value = '';
-       lat.value = '';
-       iconMain.value = '';
-       iconDescription.value = '';
+      country.value = '';
+      lon.value = '';
+      lat.value = '';
+      iconMain.value = '';
+      iconDescription.value = '';
 
       update();
       log('${response.statusCode}');

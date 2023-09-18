@@ -1,5 +1,3 @@
-
-
 const String domain = 'https://api.openweathermap.org/data/2.5/weather?';
 const String apiKey = '5cc6c418446bfebf67471a918348905c';
 

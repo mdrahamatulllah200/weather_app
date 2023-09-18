@@ -4,7 +4,7 @@ import 'package:weather_app_latest/controller/home_controller.dart';
 import 'package:weather_app_latest/views/test.dart';
 import 'package:weather_app_latest/views/home_screen.dart';
 
-Future<void> main() async{
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put(HomeController());
   runApp(const MyApp());
@@ -12,7 +12,6 @@ Future<void> main() async{
 
 //https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-
 
 //https://api.openweathermap.org/data/2.5/weather?q=London&appid={API key}
 //5cc6c418446bfebf67471a918348905c
@@ -32,8 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  const HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
-
